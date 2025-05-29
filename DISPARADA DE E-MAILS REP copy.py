@@ -4,14 +4,15 @@ outlook = win32.Dispatch('outlook.application')
 
 email = outlook.CreateItem(0)
 
-CR2 = AB1 # type: ignore
-CR3 = CD2 # type: ignore
-REPO = FG3 # type: ignore
+CR2 = input("Digite a sigla de 2 da unidade")
+CR3 = input("Digite a sigla de 3 da unidade")
+REPO = input("Digite o REP do relógio")
+HORA = input("Digite Bom dia ou Boa tarde")
 
 email.To = "suporte14@polimix.com.br"
-email.Subject = "Teste - NOVO REP {CR2}/{CR3}"
+email.Subject = f"Teste - NOVO REP {CR2}/{CR3}"
 email.HTMLBODY = f"""
-<p> Boa tarde!</p>
+<p> {HORA}!</p>
 
 <p>Cadastramos um relógio na unidade de {CR2}/{CR3}, segue o REP para finalizar o cadastro: {REPO} </p>
 
